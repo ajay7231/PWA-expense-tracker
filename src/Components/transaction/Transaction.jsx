@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/globalState";
-
+import { motion } from "framer-motion"
 const Transaction = ({ transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
   const { deleteTransaction,transactions } = useContext(GlobalContext);
@@ -10,13 +10,23 @@ const Transaction = ({ transaction }) => {
   }
   return (
     <React.Fragment>
-      <li className={transaction.amount < 0 ? "minus" : "plus"}>
+      <motion.li
+        drag="x"
+        dragConstraints={{ left: -100, right: 100 }}
+        whileHover={{ scale: 1.1 }}
+        className={transaction.amount < 0 ? "minus" : "plus"}
+      >
         {transaction.text}{" "}
         <span>
           {sign}${Math.abs(transaction.amount)}
         </span>
-        <button className="delete-btn" onClick={()=>handleDeleteTransaction()}>x</button>
-      </li>
+        <button
+          className="delete-btn"
+          onClick={() => handleDeleteTransaction()}
+        >
+          x
+        </button>
+      </motion.li>
     </React.Fragment>
   );
 };

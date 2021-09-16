@@ -99,6 +99,7 @@ input[type='number'] {
   margin: 10px 0 30px;
   padding: 10px;
   width: 100%;
+  border-radius: 10px;
 }
 
 .btn:focus,
@@ -149,4 +150,9 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+.balance-amount{
+  font-size: 40px;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
 }
