@@ -9,7 +9,7 @@ const Balance = () => {
   return (
     <motion.div
       initial={{ x: -1000, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      animate={{ x: 0, opacity: 1 ,rotate:360}}
       transition={{duration: 0.5}}
     >
       <h2>Your Balance</h2>
